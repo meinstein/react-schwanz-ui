@@ -2,14 +2,15 @@
 
 Reusable React UI components with a hard dependency on Tailwind CSS.
 
-To use, it is recommended that you import this module's stylesheet like so:
+To use, it is recommended that you import this module's stylesheet.
+Be sure to include it after `@tailwind utilities`.
 
 ```
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "react-schwanz-ui/dist/index.css";
+@import "/path/to/node_modules/react-schwanz-ui/dist/index.css";
 ```
 
 Then, import any of the components as you normally would.
