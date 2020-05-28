@@ -1,5 +1,5 @@
 import * as React from "react";
-import classNames from "classnames";
+import cn from "classnames";
 
 type ButtonType = "primary" | "secondary" | "warning";
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -34,7 +34,7 @@ export const Button: React.FC<Props> = ({
   return (
     <button
       disabled={disabled || loading}
-      className={classNames(
+      className={cn(
         baseClassnames,
         className,
         buttonTypeClasses[buttonType],
@@ -43,7 +43,7 @@ export const Button: React.FC<Props> = ({
       )}
       {...unused}
     >
-      {loading ? <span className="italic">Loading...</span> : children}
+      {loading ? <span className={cn("italic")}>Loading...</span> : children}
     </button>
   );
 };

@@ -1,9 +1,29 @@
 import * as React from "react";
-import classNames from "classnames";
+import cn from "classnames";
 
-export interface Props extends Omit<React.SelectHTMLAttributes<{}>, "onChange"> {
+type ModifiedSelect = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "onChange">;
+
+interface Props extends ModifiedSelect {
   onChange?: (value: string) => void;
 }
+
+const baseSelectClassnames = [
+  "block",
+  "appearance-none",
+  "w-full",
+  "bg-white",
+  "border",
+  "border-gray-700",
+  "px-4",
+  "py-4",
+  "pr-8",
+  "rounded",
+  "leading-tight",
+  "focus:outline-none",
+  "focus:shadow-outline",
+  "disabled:cursor-not-allowed",
+  "disabled:opacity-75",
+];
 
 export const Select: React.FC<Props> = ({
   onChange,
@@ -11,33 +31,18 @@ export const Select: React.FC<Props> = ({
   value,
   defaultValue,
   disabled,
-  className = [],
+  className,
   ...props
 }) => {
-  const baseSelectClassnames = [
-    "block",
-    "appearance-none",
-    "w-full",
-    "bg-white",
-    "border",
-    "border-gray-700",
-    "px-4",
-    "py-4",
-    "pr-8",
-    "rounded",
-    "leading-tight",
-    "focus:outline-none",
-    "focus:shadow-outline",
-    "disabled:cursor-not-allowed",
-    "disabled:opacity-75",
-  ];
   return (
     <div
-      style={{ cursor: disabled ? "not-allowed" : "pointer" }}
-      className={classNames("inline-block", "relative", "w-full")}
+      className={cn("inline-block", "relative", "w-full", {
+        "cursor-not-allowed": disabled,
+        "cursor-pointer": !disabled,
+      })}
     >
       <select
-        className={classNames(baseSelectClassnames.concat(className))}
+        className={cn(baseSelectClassnames, cn)}
         onChange={(event: React.SyntheticEvent): void => {
           event.preventDefault();
           const target = event.target as HTMLSelectElement;
@@ -51,7 +56,7 @@ export const Select: React.FC<Props> = ({
         {children}
       </select>
       <div
-        className={classNames([
+        className={cn(
           "pointer-events-none",
           "absolute",
           "inset-y-0",
@@ -59,11 +64,11 @@ export const Select: React.FC<Props> = ({
           "flex",
           "items-center",
           "px-2",
-          "text-gray-700",
-        ])}
+          "text-gray-700"
+        )}
       >
         <svg
-          className={classNames(["fill-current", "h-4", "w-4"])}
+          className={cn("fill-current", "h-4", "w-4")}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >
