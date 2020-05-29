@@ -17,11 +17,13 @@ If you are using this module in a project that already includes Tailwind CSS, im
 In all other contexts, you may include this module's stylesheet as you normally would any other stylesheet. For example:
 
 ```typescript
-// App.tsx
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { App } from ".";
 
 import "/path/to/node_modules/react-schwanz-ui/dist/utilities.css";
 
-<App />;
+ReactDOM.render(<App />, document.getElementById("app"));
 ```
 
 If your project does not include Tailwind CSS, it is recommended that you also use the default base stylesheet:
@@ -33,5 +35,16 @@ import "/path/to/node_modules/react-schwanz-ui/dist/base.css";
 Lastly, import any of the components as you normally would.
 
 ```typescript
-import { Button } from 'react-schwanz-ui
+import { Button } from "react-schwanz-ui";
+```
+
+# Available Components
+
+```typescript
+import { Button } from "react-schwanz-ui";
+import { Label } from "react-schwanz-ui";
+import { MetaItems } from "react-schwanz-ui";
+import { Select } from "react-schwanz-ui";
+import { Textarea } from "react-schwanz-ui";
+import { TextInput } from "react-schwanz-ui";
 ```
