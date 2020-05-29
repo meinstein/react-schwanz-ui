@@ -13,8 +13,8 @@ export const textInputBaseClassnames = [
   "rs-leading-tight",
   "rs-focus:outline-none",
   "rs-focus:shadow-outline",
-  "rs-disabled:opacity-75",
-  "rs-disabled:cursor-not-allowed",
+  "disabled:rs-opacity-75",
+  "disabled:rs-cursor-not-allowed",
 ];
 
 type ModifiedInput = Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "type">;

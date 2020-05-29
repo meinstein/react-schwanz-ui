@@ -21,8 +21,8 @@ const baseSelectClassnames = [
   "rs-leading-tight",
   "rs-focus:outline-none",
   "rs-focus:shadow-outline",
-  "rs-disabled:cursor-not-allowed",
-  "rs-disabled:opacity-75",
+  "disabled:rs-cursor-not-allowed",
+  "disabled:rs-opacity-75",
 ];
 
 export const Select: React.FC<Props> = ({

@@ -13,7 +13,7 @@ const baseClassnames = [
   "rs-text-sm",
   "rs-tracking-wide",
   "rs-rounded",
-  "rs-disabled:opacity-75",
+  "disabled:rs-opacity-75",
   "rs-border-2",
 ];
 
@@ -38,8 +38,8 @@ export const Button: React.FC<Props> = ({
         baseClassnames,
         className,
         buttonTypeClasses[buttonType],
-        { "rs-disabled:cursor-not-allowed": disabled && !loading },
-        { "rs-disabled:cursor-wait": disabled && loading }
+        { "disabled:rs-cursor-not-allowed": disabled && !loading },
+        { "disabled:rs-cursor-wait": disabled && loading }
       )}
       {...unused}
     >
