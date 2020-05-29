@@ -6,7 +6,9 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "rimraf dist && npm run build:tailwind && tsc",
-    "build:tailwind": "parcel build ./src/index.css --out-dir dist",
+    "build:tailwind": "npm run build:tailwind:utilities && npm run build:tailwind:base",
+    "build:tailwind:base": "npx tailwindcss build src/base.css -o dist/base.css",
+    "build:tailwind:utilities": "npx tailwindcss build src/utilities.css -o dist/utilities.css",
     "prepublish": "npm run build"
   },
   "repository": {

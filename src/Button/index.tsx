@@ -8,19 +8,19 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const baseClassnames = [
-  "font-semibold",
-  "uppercase",
-  "text-sm",
-  "tracking-wide",
-  "rounded",
-  "disabled:opacity-75",
-  "border-2",
+  "rs-font-semibold",
+  "rs-uppercase",
+  "rs-text-sm",
+  "rs-tracking-wide",
+  "rs-rounded",
+  "rs-disabled:opacity-75",
+  "rs-border-2",
 ];
 
 const buttonTypeClasses: { [key in ButtonType]: string[] } = {
-  primary: ["p-4", "bg-gray-800", "text-white", "border-gray-800"],
-  secondary: ["p-4", "bg-white", "text-gray-800", "border-gray-800"],
-  warning: ["p-4", "bg-red-600", "text-white", "border-red-600"],
+  primary: ["rs-p-4", "rs-bg-gray-800", "rs-text-white", "rs-border-gray-800"],
+  secondary: ["rs-p-4", "rs-bg-white", "rs-text-gray-800", "rs-border-gray-800"],
+  warning: ["rs-p-4", "rs-bg-red-600", "rs-text-white", "rs-border-red-600"],
 };
 
 export const Button: React.FC<Props> = ({
@@ -38,12 +38,12 @@ export const Button: React.FC<Props> = ({
         baseClassnames,
         className,
         buttonTypeClasses[buttonType],
-        { "disabled:cursor-not-allowed": disabled && !loading },
-        { "disabled:cursor-wait": disabled && loading }
+        { "rs-disabled:cursor-not-allowed": disabled && !loading },
+        { "rs-disabled:cursor-wait": disabled && loading }
       )}
       {...unused}
     >
-      {loading ? <span className={cn("italic")}>Loading...</span> : children}
+      {loading ? <span className={cn("rs-italic")}>Loading...</span> : children}
     </button>
   );
 };

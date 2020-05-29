@@ -1,10 +1,12 @@
 module.exports = {
-  purge: ["./src/**/*.tsx"],
-  theme: {
-    extend: {},
+  prefix: "rs-",
+  purge: {
+    enabled: true,
+    content: ["./src/**/*.tsx"],
   },
+  theme: {},
+  plugins: [],
   variants: {
     cursor: ["disabled"],
   },
-  plugins: [],
 };

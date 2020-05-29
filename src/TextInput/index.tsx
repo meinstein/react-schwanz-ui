@@ -2,37 +2,38 @@ import * as React from "react";
 import cn from "classnames";
 
 export const textInputBaseClassnames = [
-  "appearance-none",
-  "border",
-  "rounded",
-  "w-full",
-  "py-4",
-  "px-3",
-  "text-black",
-  "border-gray-700",
-  "leading-tight",
-  "focus:outline-none",
-  "focus:shadow-outline",
-  "disabled:opacity-75",
-  "disabled:cursor-not-allowed",
+  "rs-appearance-none",
+  "rs-border",
+  "rs-rounded",
+  "rs-w-full",
+  "rs-py-4",
+  "rs-px-3",
+  "rs-text-black",
+  "rs-border-gray-700",
+  "rs-leading-tight",
+  "rs-focus:outline-none",
+  "rs-focus:shadow-outline",
+  "rs-disabled:opacity-75",
+  "rs-disabled:cursor-not-allowed",
 ];
 
-type ModifiedInput = Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange">;
+type ModifiedInput = Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "type">;
 
 interface Props extends ModifiedInput {
+  type: "text" | "email" | "password" | "url";
   onChange?: (value: string) => void;
 }
 
-export const TextInput: React.FC<Props> = ({ onChange, className, ...props }) => {
+export const TextInput: React.FC<Props> = ({ onChange, type = "text", className, ...props }) => {
   return (
     <input
-      type="text"
+      type={type}
+      className={cn(textInputBaseClassnames, className)}
       onChange={(event: React.SyntheticEvent): void => {
         const target = event.target as HTMLInputElement;
         const value = target.value;
         onChange(value);
       }}
-      className={cn(textInputBaseClassnames, className)}
       {...props}
     />
   );

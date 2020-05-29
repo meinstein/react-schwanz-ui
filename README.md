@@ -1,30 +1,37 @@
 # react-schwanz-ui
 
-Reusable React UI components based on default utility styling from Tailwind CSS.
+Typed React UI components styled with Tailwind CSS utilities.
 
-To use, you must import this module's stylesheet.
+To use, you must at minimum import this module's `utilities.css` stylesheet.
 
-If using in conjunction with a Tailwind CSS setup, import after `@tailwind utilities`:
+If you are using this module in a project that already includes Tailwind CSS, import the stylesheet like so:
 
 ```
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "/path/to/node_modules/react-schwanz-ui/dist/index.css";
+@import "/path/to/node_modules/react-schwanz-ui/dist/utilities.css";
 ```
 
-If using in any other setup, import the stylesheet at the root of your app.
+In all other contexts, you may include this module's stylesheet as you normally would any other stylesheet. For example:
 
 ```
 // App.tsx
 
-import '/path/to/node_modules/react-schwanz-ui/dist/index.css'
+import '/path/to/node_modules/react-schwanz-ui/dist/utilities.css'
 
 <App />
 ```
 
-Then, import any of the components as you normally would.
+If your project does not include Tailwind CSS, it is recommended that you also use the default base stylesheet:
+
+```
+import '/path/to/node_modules/react-schwanz-ui/dist/base.css'
+
+```
+
+Lastly, import any of the components as you normally would.
 
 ```
 import { Button } from 'react-schwanz-ui

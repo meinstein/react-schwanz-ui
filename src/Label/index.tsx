@@ -17,12 +17,12 @@ export const Label: React.FC<Props> = ({ children, text, className, ...props }) 
       <label
         htmlFor={htmlFor}
         className={cn(
-          "block",
-          "text-black",
-          "text-sm",
-          "font-semibold",
-          "uppercase",
-          "mb-1",
+          "rs-block",
+          "rs-text-black",
+          "rs-text-sm",
+          "rs-font-semibold",
+          "rs-uppercase",
+          "rs-mb-1",
           className
         )}
         {...props}

@@ -8,21 +8,21 @@ interface Props extends ModifiedSelect {
 }
 
 const baseSelectClassnames = [
-  "block",
-  "appearance-none",
-  "w-full",
-  "bg-white",
-  "border",
-  "border-gray-700",
-  "px-4",
-  "py-4",
-  "pr-8",
-  "rounded",
-  "leading-tight",
-  "focus:outline-none",
-  "focus:shadow-outline",
-  "disabled:cursor-not-allowed",
-  "disabled:opacity-75",
+  "rs-block",
+  "rs-appearance-none",
+  "rs-w-full",
+  "rs-bg-white",
+  "rs-border",
+  "rs-border-gray-700",
+  "rs-px-4",
+  "rs-py-4",
+  "rs-pr-8",
+  "rs-rounded",
+  "rs-leading-tight",
+  "rs-focus:outline-none",
+  "rs-focus:shadow-outline",
+  "rs-disabled:cursor-not-allowed",
+  "rs-disabled:opacity-75",
 ];
 
 export const Select: React.FC<Props> = ({
@@ -36,9 +36,9 @@ export const Select: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={cn("inline-block", "relative", "w-full", {
-        "cursor-not-allowed": disabled,
-        "cursor-pointer": !disabled,
+      className={cn("rs-inline-block", "rs-relative", "rs-w-full", {
+        "rs-cursor-not-allowed": disabled,
+        "rs-cursor-pointer": !disabled,
       })}
     >
       <select
@@ -57,18 +57,18 @@ export const Select: React.FC<Props> = ({
       </select>
       <div
         className={cn(
-          "pointer-events-none",
-          "absolute",
-          "inset-y-0",
-          "right-0",
-          "flex",
-          "items-center",
-          "px-2",
-          "text-gray-700"
+          "rs-pointer-events-none",
+          "rs-absolute",
+          "rs-inset-y-0",
+          "rs-right-0",
+          "rs-flex",
+          "rs-items-center",
+          "rs-px-2",
+          "rs-text-gray-700"
         )}
       >
         <svg
-          className={cn("fill-current", "h-4", "w-4")}
+          className={cn("rs-fill-current", "rs-h-4", "rs-w-4")}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >
