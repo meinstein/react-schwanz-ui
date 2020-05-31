@@ -20,7 +20,7 @@ export const textInputBaseClassnames = [
 type ModifiedInput = Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "type">;
 
 interface Props extends ModifiedInput {
-  type: "text" | "email" | "password" | "url";
+  type?: "text" | "email" | "password" | "url";
   onChange?: (value: string) => void;
 }
 

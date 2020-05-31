@@ -9,6 +9,8 @@
     "build:tailwind": "npm run build:tailwind:utilities && npm run build:tailwind:base",
     "build:tailwind:base": "npx tailwindcss build src/base.css -o dist/base.css",
     "build:tailwind:utilities": "npx tailwindcss build src/utilities.css -o dist/utilities.css",
+    "build:demo": "parcel build demo/index.html --out-dir demo/output --no-cache",
+    "demo": "parcel demo/index.html --out-dir demo/output --no-cache",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -20,8 +22,10 @@
   "devDependencies": {
     "@types/classnames": "^2.2.10",
     "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
     "parcel": "^1.12.4",
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
     "tailwindcss": "^1.4.6",
     "typescript": "^3.9.3"
